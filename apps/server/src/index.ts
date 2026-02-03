@@ -1,7 +1,7 @@
 import { Hono } from "hono"
 import { cors } from "hono/cors"
 import { handle } from "hono/vercel";
-import { serve } from "@hono/node-server";
+// import { serve } from "@hono/node-server";
 import { db } from "@repo/db";
 import { schema } from "@repo/db";
 import { eq } from "drizzle-orm";
@@ -64,11 +64,11 @@ export const PATCH = handle(app)
 export const DELETE = handle(app)
 export const OPTIONS = handle(app)
 
-// Local development server
-const port = 3000
-console.log(`Server is running on port http://localhost:${port}`)
+// // Local development server
+// const port = 3000
+// console.log(`Server is running on port http://localhost:${port}`)
 
-serve({
-  fetch: app.fetch,
-  port
-})
+// serve({
+//   fetch: app.fetch,
+//   port
+// })
