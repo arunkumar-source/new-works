@@ -7,5 +7,6 @@ export default defineConfig({
   target: "node22",
   sourcemap: true,
   clean: true,
-  external: ["@repo/db", "@repo/shared"],
+  bundle: true,
+  noExternal: ["@repo/db", "@repo/shared"],
 })
