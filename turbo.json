@@ -9,7 +9,7 @@
         },
         "build": {
             "dependsOn": [],
-            "env": ["DB_URL"],
+            "env": ["DATABASE_URL"],
             "outputs": ["dist/**"]
         }
        }
