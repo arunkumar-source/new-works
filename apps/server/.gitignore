@@ -11,6 +11,7 @@ dist/
 .turbo
 # deps
 node_modules/
+/api
 
 # env
 .env

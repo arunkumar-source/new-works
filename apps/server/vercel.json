@@ -1,11 +1,7 @@
 {
  "buildCommand": "pnpm --filter server build",
   "outputDirectory": "api",
-   "functions": {
-    "api/**/*.ts": {
-      "runtime": "nodejs@20.x"
-    }
-  },
+   
    "routes": [
     {
       "src": "/(.*)",
