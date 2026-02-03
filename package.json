@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "test": "turbo test"
+    "test": "turbo test",
+    "build:packages": "pnpm --filter @repo/db build && pnpm --filter @repo/shared build"
     
   },
   "author": "",
