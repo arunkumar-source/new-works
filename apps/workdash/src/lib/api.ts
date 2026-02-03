@@ -1,11 +1,18 @@
 import type { Work } from "@repo/shared"
 
-const API_URL = "https://mono-repo-server.vercel.app/"
+const API_URL = "http://localhost:3000/"
 
 export const fetchWorks = async (): Promise<Work[]> => {
+  console.log("Fetching works from:", API_URL)
   const res = await fetch(API_URL)
-  if (!res.ok) throw new Error("Failed to fetch works")
-  return res.json()
+  console.log("Response status:", res.status)
+  if (!res.ok) {
+    console.error("Failed to fetch works:", res.statusText)
+    throw new Error("Failed to fetch works")
+  }
+  const data = await res.json()
+  console.log("Fetched data:", data)
+  return data
 }
 
 export const addWork = async (data: Pick<Work, "title" | "status">) => {

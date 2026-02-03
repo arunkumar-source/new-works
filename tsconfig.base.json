@@ -7,7 +7,10 @@
     "strict": true,
     "skipLibCheck": true,
     "types": ["node"],
-    "@repo/db": ["packages/db/src/index.ts"],
-    "@repo/db/*": ["packages/db/src/*"]
+    "baseUrl": ".",
+    "paths": {
+      "@repo/db": ["packages/db/src/index.ts"],
+      "@repo/db/*": ["packages/db/src/*"]
+    }
   }
 }

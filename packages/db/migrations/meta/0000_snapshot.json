@@ -1,5 +1,5 @@
 {
-  "id": "3aeec6f3-5a51-4dee-8b8d-c18fbbdcce66",
+  "id": "b623cfb1-4122-43f9-b72a-7668db404f7c",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -28,8 +28,8 @@
           "notNull": true,
           "default": "'todo'"
         },
-        "created_at": {
-          "name": "created_at",
+        "createdAt": {
+          "name": "createdAt",
           "type": "timestamp with time zone",
           "primaryKey": false,
           "notNull": true,

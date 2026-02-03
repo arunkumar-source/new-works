@@ -4,7 +4,7 @@ import { KanbanColumn } from "./KanbanColoumn"
 
 const COLUMNS = [
   { id: "todo", title: "Todo" },
-  { id: "inprogress", title: "In Progress" },
+  { id: "in-progress", title: "In Progress" },
   { id: "done", title: "Done" },
 ] as const
 
@@ -38,7 +38,7 @@ export function KanbanBoard() {
     }
 
     // Update the status based on the destination column
-    const newStatus = destination.droppableId as "todo" | "inprogress" | "done"
+    const newStatus = destination.droppableId as "todo" | "in-progress" | "done"
     
     // Only update if status has changed
     if (work.status !== newStatus) {

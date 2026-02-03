@@ -20,7 +20,7 @@ export default function Dashboard() {
 
   const pieData = [
     { name: "Todo", value: status.todo },
-    { name: "In Progress", value: status.inprogress },
+    { name: "In Progress", value: status["in-progress"] },
     { name: "Done", value: status.done },
   ]
 
@@ -39,7 +39,7 @@ export default function Dashboard() {
         </Card>
         <Card className="p-4">
           <p className="text-sm text-muted-foreground">In Progress</p>
-          <p className="text-2xl font-bold">{status.inprogress}</p>
+          <p className="text-2xl font-bold">{status["in-progress"]}</p>
         </Card>
         <Card className="p-4">
           <p className="text-sm text-muted-foreground">Done</p>
@@ -58,7 +58,7 @@ export default function Dashboard() {
               <ChartContainer
                 config={{
                   Todo: { label: "Todo" },
-                  "In Progress": { label: "In Progress" },
+                  "In Progress": { label: "In-Progress" },
                   Done: { label: "Done" },
                 }}
                 className="h-[300px] w-full"

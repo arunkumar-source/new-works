@@ -7,5 +7,5 @@ export default defineConfig({
   target: "node18",
   sourcemap: true,
   clean: false,
-  noExternal: [],
+  noExternal: ["@repo/db", "@repo/shared"],
 })
