@@ -1,6 +1,6 @@
 import type { Work } from "@repo/shared"
 
-const API_URL = "http://localhost:3000/"
+const API_URL = "https://new-works-server.vercel.app/"
 
 export const fetchWorks = async (): Promise<Work[]> => {
   console.log("Fetching works from:", API_URL)

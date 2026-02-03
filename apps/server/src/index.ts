@@ -1,7 +1,7 @@
 import { Hono } from "hono"
 import { cors } from "hono/cors"
 import { handle } from "hono/vercel";
-import { serve } from "@hono/node-server";
+// import { serve } from "@hono/node-server";
 import { db } from "@repo/db";
 import { schema } from "@repo/db";
 import { eq } from "drizzle-orm";
@@ -10,7 +10,7 @@ const app = new Hono()
 
 
 app.use('*', cors({
-  origin: ['*','http://localhost:5173','http://localhost:3000','http://localhost:4173','http://localhost:8080','https://mono-repo-workdash.vercel.app/','https://mono-repo-workdash.vercel.app'], 
+  origin: ['*','http://localhost:5173','https://new-works-workdash.vercel.app/','https://new-works-workdash.vercel.app'], 
   allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowHeaders: ['Content-Type'],
 }))
@@ -65,10 +65,10 @@ export const DELETE = handle(app)
 export const OPTIONS = handle(app)
 
 // Local development server
-const port = 3000
-console.log(`Server is running on port http://localhost:${port}`)
+// const port = 3000
+// console.log(`Server is running on port http://localhost:${port}`)
 
-serve({
-  fetch: app.fetch,
-  port
-})
+// serve({
+//   fetch: app.fetch,
+//   port
+// })

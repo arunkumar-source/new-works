@@ -1,9 +1,5 @@
-var __create = Object.create;
 var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
   get: (a, b2) => (typeof require !== "undefined" ? require : a)[b2]
 }) : x)(function(x) {
@@ -17,22 +13,6 @@ var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
 
 // ../../node_modules/.pnpm/dotenv@16.6.1/node_modules/dotenv/package.json
 var require_package = __commonJS({
@@ -310,7 +290,7 @@ var require_main = __commonJS({
         return { parsed: parsedAll };
       }
     }
-    function config2(options) {
+    function config(options) {
       if (_dotenvKey(options).length === 0) {
         return DotenvModule.configDotenv(options);
       }
@@ -377,7 +357,7 @@ var require_main = __commonJS({
       configDotenv,
       _configVault,
       _parseVault,
-      config: config2,
+      config,
       decrypt,
       parse: parse2,
       populate
@@ -398,9 +378,6 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { handle } from "hono/vercel";
 import { serve } from "@hono/node-server";
-
-// ../../packages/db/src/client.ts
-var dotenv = __toESM(require_main(), 1);
 
 // ../../node_modules/.pnpm/postgres@3.4.8/node_modules/postgres/src/index.js
 import os from "os";
@@ -2526,8 +2503,14 @@ function osUsername() {
 
 // ../../packages/db/src/client.ts
 import { drizzle } from "drizzle-orm/postgres-js";
+var dotenv;
 if (process.env.NODE_ENV !== "production") {
-  dotenv.config({ path: "../../.env" });
+  try {
+    dotenv = require_main();
+    dotenv.config({ path: "../../.env" });
+  } catch (e) {
+    console.log("dotenv not available, relying on environment variables");
+  }
 }
 console.log("DATABASE_URL:", process.env.DATABASE_URL ? "Set" : "Not set");
 var client = src_default(process.env.DATABASE_URL);
@@ -2558,7 +2541,7 @@ var workDB = pgTable("workdb", {
 import { eq } from "drizzle-orm";
 var app = new Hono();
 app.use("*", cors({
-  origin: ["*", "http://localhost:5173", "http://localhost:3000", "http://localhost:4173", "http://localhost:8080", "https://mono-repo-workdash.vercel.app/", "https://mono-repo-workdash.vercel.app"],
+  origin: ["*", "http://localhost:5173", "https://mono-repo-workdash.vercel.app/", "https://mono-repo-workdash.vercel.app"],
   allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowHeaders: ["Content-Type"]
 }));
