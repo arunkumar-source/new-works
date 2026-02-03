@@ -8,10 +8,9 @@
             "dependsOn": []
         },
         "build": {
-            "dependsOn": ["^build"],
+            "dependsOn": [],
             "env": ["DB_URL"],
-            "outputs": ["dist/**"],
-            
+            "outputs": ["dist/**"]
         }
        }
 }
