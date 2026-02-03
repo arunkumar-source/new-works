@@ -5,7 +5,7 @@ export default defineConfig({
   outDir: "dist",    
   format: ["esm"],
   target: "node18",
-  noExternal: ["@repo/db", "@repo/shared"],
   sourcemap: true,
   clean: false,
+  noExternal: [],
 })

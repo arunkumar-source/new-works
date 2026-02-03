@@ -2,7 +2,7 @@ import * as dotenv from "dotenv"
 import postgres from "postgres"
 import { drizzle } from "drizzle-orm/postgres-js"
 
-dotenv.config({path: "../../.env"})
+dotenv.config()
 
 const client = postgres(process.env.DB_URL!)
 

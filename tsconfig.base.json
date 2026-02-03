@@ -6,6 +6,8 @@
 
     "strict": true,
     "skipLibCheck": true,
-    "types": ["node"]
+    "types": ["node"],
+    "@repo/db": ["packages/db/src/index.ts"],
+    "@repo/db/*": ["packages/db/src/*"]
   }
 }
