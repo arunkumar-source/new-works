@@ -6,7 +6,7 @@ export default defineConfig({
   outDir: "api",
   platform: "node",
   target: "node18",
-  noExternal: ["fs", "dotenv", "@repo/db", "@repo/shared"],
+  noExternal: ["fs", "@repo/db", "@repo/shared"],
   dts: false,
   clean: true,
   sourcemap: false,
