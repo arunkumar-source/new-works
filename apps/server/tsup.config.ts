@@ -8,5 +8,5 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   bundle: true,
-  noExternal: ["@repo/db", "@repo/shared"],
+  noExternal: ["@repo/db", "drizzle-orm", "postgres"],
 })
