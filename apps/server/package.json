@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch ./src/index.ts",
+    "build": "tsc --noEmit && tsup",
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.9",
+    "@repo/db": "workspace:*",
+    "@repo/shared": "workspace:*",
+    "drizzle-orm": "^0.45.1",
+    "hono": "^4.11.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsup": "^8.5.1",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
+  }
+}
