@@ -5,8 +5,8 @@ export default defineConfig({
   format: ["esm"],
   platform: "node",
   target: "node18",
-  external: ["fs", "dotenv", "@repo/db", "@repo/shared"],
-  dts: false,
+  bundle: true,
+  external: ["@repo/db", "@repo/shared"],
   clean: true,
   sourcemap: false,
 });
