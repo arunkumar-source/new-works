@@ -1,12 +1,12 @@
-import { defineConfig } from "tsup"
+import { defineConfig } from "tsup";
 
 export default defineConfig({
   entry: ["src/index.ts"],
-  outDir: "dist",    
   format: ["esm"],
-  target: "node22",
-  sourcemap: true,
+  platform: "node",
+  target: "node18",
+  external: ["fs", "dotenv", "@repo/db", "@repo/shared"],
+  dts: false,
   clean: true,
-  bundle: true,
-  noExternal: ["@repo/db", "drizzle-orm", "postgres"],
-})
+  sourcemap: false,
+});
