@@ -1,11 +1,10 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from "tsup"
 
 export default defineConfig({
-  entry: ['./src/index.(ts|js)'],
-  splitting: false,
-  sourcemap: false,
-  clean: false,
-  noExternal:["@repo/db","@repo/shared"],
-  format:"esm",
-  outDir:"./src"
+  entry: ["src/index.ts"],
+  outDir: "dist",        // 🔴 REQUIRED
+  format: ["esm"],
+  target: "node18",
+  sourcemap: true,
+  clean: true
 })
