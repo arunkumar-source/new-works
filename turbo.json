@@ -4,13 +4,12 @@
         "dev": {
             "cache": false,
             "persistent": true,
-            "outputs": [],
             "dependsOn": []
         },
         "build": {
             "dependsOn": [],
             "env": ["DATABASE_URL"],
-            "outputs": ["dist/**"]
+            "outputs": ["dist/**", "api/**"]
         }
        }
 }

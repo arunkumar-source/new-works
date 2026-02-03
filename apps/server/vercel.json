@@ -1,10 +1,10 @@
 {
  "buildCommand": "pnpm --filter server build",
-  "outputDirectory": "apps/server/dist",
+  "outputDirectory": "api",
    "routes": [
     {
       "src": "/(.*)",
-      "dest": "apps/server/dist/index.js"
+      "dest": "/api/index.js"
     }
   ]
 }
