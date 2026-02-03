@@ -4,7 +4,7 @@
   "installCommand": "pnpm install",
   "functions": {
     "src/index.ts": {
-      "runtime": "nodejs22"
+      "runtime": "nodejs@22.x"
     }
   }
 }
