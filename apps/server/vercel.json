@@ -1,10 +1,5 @@
 {
   "buildCommand": "pnpm build:packages && pnpm build",
   "outputDirectory": "dist",
-  "installCommand": "pnpm install",
-  "functions": {
-    "src/index.ts": {
-      "runtime": "nodejs@22.x"
-    }
-  }
+  "installCommand": "pnpm install"
 }
