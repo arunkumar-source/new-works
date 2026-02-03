@@ -2,3 +2,5 @@
 /.turbo
 /.env
 #/nothing
+.vercel
+.env*.local

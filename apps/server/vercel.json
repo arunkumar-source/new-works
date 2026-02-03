@@ -6,8 +6,5 @@
     "src/index.ts": {
       "runtime": "nodejs22"
     }
-  },
-  "env": {
-    "DATABASE_URL": "@DATABASE_URL"
   }
 }
