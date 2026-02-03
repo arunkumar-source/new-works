@@ -6,6 +6,6 @@ export default defineConfig({
   format: ["esm"],
   target: "node22",
   sourcemap: true,
-  clean: false,
-  noExternal: ["@repo/db", "@repo/shared"],
+  clean: true,
+  external: ["@repo/db", "@repo/shared"],
 })
